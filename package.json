@@ -1,0 +1,10 @@
+{
+  "name": "ball-game-mvp",
+  "private": true,
+  "workspaces": ["contracts", "resolver", "web"],
+  "scripts": {
+    "test:contracts": "npm --workspace contracts test",
+    "build:web": "npm --workspace web run build",
+    "resolver:dry": "npm --workspace resolver run dry-run"
+  }
+}
