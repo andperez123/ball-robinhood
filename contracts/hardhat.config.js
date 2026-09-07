@@ -1,7 +1,9 @@
 require("@nomicfoundation/hardhat-toolbox");
 require("dotenv").config();
 
-const PRIVATE_KEY = process.env.PRIVATE_KEY || "";
+// Accept only a real 32-byte hex key so .env.example placeholders do not break `hardhat test`.
+const rawKey = (process.env.PRIVATE_KEY || "").trim();
+const PRIVATE_KEY = /^0x[0-9a-fA-F]{64}$/.test(rawKey) ? rawKey : undefined;
 
 module.exports = {
   solidity: {
