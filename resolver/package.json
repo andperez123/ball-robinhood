@@ -1,0 +1,16 @@
+{
+  "name": "ball-resolver",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "node src/index.mjs sync",
+    "resolve": "node src/index.mjs resolve",
+    "run": "node src/index.mjs run",
+    "dry-run": "DRY_RUN=true node src/index.mjs run"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "viem": "^2.21.54"
+  }
+}
