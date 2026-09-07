@@ -40,7 +40,16 @@ const metadata = {
 };
 
 const networks = [robinhoodChain];
-export const wagmiAdapter = new WagmiAdapter({ networks, projectId, ssr: false });
+const customRpcUrls = {
+  [`eip155:${CHAIN_ID}`]: [{ url: RPC_URL }],
+};
+
+export const wagmiAdapter = new WagmiAdapter({
+  networks,
+  projectId,
+  ssr: false,
+  customRpcUrls,
+});
 
 export const appKit = createAppKit({
   adapters: [wagmiAdapter],
@@ -48,7 +57,7 @@ export const appKit = createAppKit({
   projectId,
   metadata,
   defaultNetwork: robinhoodChain,
-  customRpcUrls: { [`eip155:${CHAIN_ID}`]: RPC_URL },
+  customRpcUrls,
   features: { analytics: false },
 });
 
