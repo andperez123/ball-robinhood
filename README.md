@@ -46,7 +46,22 @@ ETH pays gas.
 ```bash
 npm install
 npm run test:contracts
-npm --workspace web run dev
+```
+
+### Local Hardhat + web demo (recommended first)
+
+One command boots Hardhat, deploys `TestBallToken` + `BallPool`, seeds NFL/MLB markets, writes `web/.env.local`, and starts the UI with a built-in demo wallet (no MetaMask / Reown needed):
+
+```bash
+npm run demo
+```
+
+Then open `http://localhost:5173`. Place bets against the local chain; incinerator stats and pool sizes update from on-chain state.
+
+UI-only (mock data, no chain):
+
+```bash
+npm run dev:web
 ```
 
 ### Deploy contracts to Robinhood Chain testnet

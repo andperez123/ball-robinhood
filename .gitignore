@@ -7,3 +7,4 @@ coverage
 dist
 .DS_Store
 resolver/data/runtime-markets.json
+contracts/deployments/
